@@ -1,1 +1,1 @@
-from dotenv import dotenv_values
+from 'python-dotenv' import dotenv_values
