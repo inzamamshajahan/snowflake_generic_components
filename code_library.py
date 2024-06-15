@@ -1,6 +1,8 @@
 from snowflake.snowpark import Session
 from snowflake.snowpark.functions import col,to_timestamp
 import pandas as pd
+from dotenv import dotenv_values
+secrets = dotenv_values(".env")
 
 def snowconnection(connection_config):
     session = Session.builder.configs(connection_config).create()
@@ -16,3 +18,13 @@ def snowconnection(connection_config):
             
     session_details.write.mode("append").save_as_table("session_audit")
     return session
+    
+connection_parameters = {
+"account":secrets['account'], 
+"user":secrets['user'], 
+"password": secrets['password'], 
+"role":secrets['role'], 
+"warehouse":"COMPUTE_WH", 
+"database":"DEMO_DB", 
+"schema":"PUBLIC" 
+}
