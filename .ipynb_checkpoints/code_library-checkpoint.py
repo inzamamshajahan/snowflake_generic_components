@@ -1,5 +1,6 @@
 from snowflake.snowpark import Session
 from snowflake.snowpark.functions import col,to_timestamp
+import pandas as pd
 
 def snowconnection(connection_config):
     session = Session.builder.configs(connection_config).create()
