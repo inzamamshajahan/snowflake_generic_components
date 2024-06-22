@@ -1,0 +1,22 @@
+{
+    "Database_name":"DEMO_DB",
+    "Schema_name":"PUBLIC",
+    "Target_table":"EMP_DETAILS_AVRO_CLS",
+    "Reject_table":"EMPLOYEE_AVRO_REJECTS",      
+    "target_columns":["REGISTRATION",
+    "USER_ID",
+    "FIRST_NAME",
+    "LAST_NAME",
+    "USER_EMAIL"],
+    "on_error":"CONTINUE",
+    "Source_location":"@DEMO_DB.EXTERNAL_STAGES.S3_STG2/sp_avro/",
+    "Source_file_type":"avro",
+    "map_columns":{
+        "REGISTRATION_DTTM":"REGISTRATION",
+        "ID":"USER_ID",
+        "FIRST_NAME":"FIRST_NAME",
+        "LAST_NAME":"LAST_NAME",
+        "EMAIL":"USER_EMAIL"
+    }
+    
+}
