@@ -1,0 +1,10 @@
+{
+"Database_name":"DEMO_DB",
+"Schema_name":"PUBLIC",
+"Target_table":"EMPLOYEE",
+"Reject_table":"EMPLOYEE_REJECTS",
+"target_columns":["FIRST_NAME","LAST_NAME","EMAIL","ADDRESS","CITY","DOJ"],
+"on_error":"CONTINUE",
+"Source_location":"@demo_db.external_stages.s3_stg/sp_csv/",
+"Source_file_type":"csv"
+}
